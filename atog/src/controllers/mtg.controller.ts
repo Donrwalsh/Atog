@@ -6,7 +6,6 @@ export class MtgController {
 
     @Get()
     findAll(@Req() request: Request): string {
-        console.log(request);
         return 'This action returns all cards';
     }
 
