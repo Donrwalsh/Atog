@@ -9,7 +9,7 @@ async function bootstrap() {
     .setTitle('Atog')
     .setDescription('CONSUME')
     .setVersion('1.0')
-    .addTag('requests')
+    .addTag('default')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
