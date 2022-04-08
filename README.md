@@ -1,3 +1,15 @@
+## Atog
+
+NestJS Api that consumes data from other APIs and translates it as necessary.
+
+`>docker compose up dev` for local development
+
+## Database
+
+Database to store previously consumed data that is preferred over additional API calls.
+
+## Notes
+
 ### [First Steps](docs.nestjs.com/firststeps)
 
 node v16.14.2
