@@ -2,17 +2,27 @@
 
 next thing is atog and bighetti need to communicate.
 
+They communicate just fine! The stuff with docker-compose is kind of a crapshoot unfortunately. I need to understand better what's going on there, because it latches onto an old image of the nestjs app and I don't know why. Also would like a better understanding of how the database persists.
+
+As it stands right now, it's best to run atog via an npm command and the database via docker-compose.
+
+`>npm install --save @nestjs/typeorm typeorm` running this command manually seems important. A normal `>npm install` misses these packages for some reason.
+
 ## Atog
 
 NestJS Api that consumes data from other APIs and translates it as necessary.
 
-`>docker compose up dev` for local development
+`>docker compose up dev` for local development (this doesn't work all that well, just run `>npm run stat:dev`)
 
-## Mysql
+## Bighetti
+
+mySql 5.7 database
 
 Database to store previously consumed data that is preferred over additional API calls.
 
 `>docker compose up database`
+
+Movie Entity is very lazy right now. VARCHARs all around!
 
 ## Notes
 
