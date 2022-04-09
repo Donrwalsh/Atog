@@ -6,7 +6,7 @@ They communicate just fine! The stuff with docker-compose is kind of a crapshoot
 
 As it stands right now, it's best to run atog via an npm command and the database via docker-compose.
 
-`>npm install --save @nestjs/typeorm typeorm` running this command manually seems important. A normal `>npm install` misses these packages for some reason.
+I got the Atog find by ImdbId to add a new movie that isn't already in bighetti and to serve up bighetti data first if it exists.
 
 ## Atog
 
@@ -22,7 +22,9 @@ Database to store previously consumed data that is preferred over additional API
 
 `>docker compose up database`
 
-Movie Entity is very lazy right now. VARCHARs all around!
+Movie Entity is very lazy right now. VARCHARs all around! probably should remove boxOffice
+
+`>npm install --save @nestjs/typeorm typeorm` running this command manually seems important. A normal `>npm install` misses these packages for some reason.
 
 ## Notes
 
