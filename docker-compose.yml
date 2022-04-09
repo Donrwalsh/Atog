@@ -1,17 +1,30 @@
 version: '3.8'
 
 services:
+    database:
+        build: ./bighetti
+        restart: always
+        container_name: database
+        volumes:
+        - ./bighetti/conf.d:/docker-entrypoint-initdb.d/
+        ports:
+        - "3306:3306"
+        environment:
+        - MYSQL_RANDOM_ROOT_PASSWORD=yes
+        - MYSQL_DATABASE=bighetti
+        - MYSQL_USER=ansible
+        - MYSQL_PASSWORD=ansible
     dev:
         container_name: atog
         image: atog:1.0.0
         build:
             context: .
             target: development
-            dockerfile: ./Dockerfile
+            dockerfile: ./atog/Dockerfile
         command: npm run start:debug
         ports:
             - 3000:3000
-            - 9229:9229
+            # - 9229:9229
         networks:
             - nesjs-network
         volumes:
@@ -28,7 +41,7 @@ services:
         command: npm run start:prod
         ports:
             - 3000:3000
-            - 9229:9229
+            # - 9229:9229
         networks:
             - nesjs-network
         volumes:

@@ -1,12 +1,18 @@
+## Current Focus
+
+next thing is atog and bighetti need to communicate.
+
 ## Atog
 
 NestJS Api that consumes data from other APIs and translates it as necessary.
 
 `>docker compose up dev` for local development
 
-## Database
+## Mysql
 
 Database to store previously consumed data that is preferred over additional API calls.
+
+`>docker compose up database`
 
 ## Notes
 
