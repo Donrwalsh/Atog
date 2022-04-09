@@ -1,6 +1,6 @@
 FROM node:16.14-alpine3.14 AS development
 
-WORKDIR /src/app
+WORKDIR /atog/src/app
 
 COPY package*.json ./
 
@@ -15,7 +15,7 @@ FROM node:16.14-alpine3.14 as production
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
-WORKDIR /src/app
+WORKDIR /atog/src/app
 
 COPY package*.json ./
 
