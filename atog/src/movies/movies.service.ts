@@ -1,11 +1,10 @@
 import { HttpService } from "@nestjs/axios";
-import { InjectRepository } from '@nestjs/typeorm';
-import { Connection, Repository } from 'typeorm';
 import { Injectable } from "@nestjs/common";
+import { InjectRepository } from '@nestjs/typeorm';
 import { lastValueFrom } from "rxjs";
+import { Connection, getConnection, Repository } from 'typeorm';
 import { movieKey } from '../config/app-config';
 import { Movie } from "./movie.entity";
-import {getConnection} from "typeorm";
 
 @Injectable()
 export class MoviesService {

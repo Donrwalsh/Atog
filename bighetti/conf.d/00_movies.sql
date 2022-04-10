@@ -1,4 +1,4 @@
-DROP TABLE movies;
+DROP TABLE IF EXISTS movies;
 
 CREATE TABLE IF NOT EXISTS movies (id INT NOT NULL AUTO_INCREMENT, 
             title VARCHAR(100), 

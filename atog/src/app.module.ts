@@ -6,6 +6,8 @@ import { AppService } from './app.service';
 import { MtgController } from './controllers/mtg.controller';
 import { Movie } from './movies/movie.entity';
 import { MoviesModule } from './movies/movies.module';
+import { Blueprint } from './shop/blueprint.entity';
+import { ShopModule } from './shop/shop.module';
 
 @Module({
   imports: [HttpModule,
@@ -16,10 +18,10 @@ import { MoviesModule } from './movies/movies.module';
       username: 'ansible',
       password: 'ansible',
       database: 'bighetti',
-      entities: [Movie],
+      entities: [Movie, Blueprint],
       synchronize: false,
     }),
-    MoviesModule],
+    MoviesModule, ShopModule],
   controllers: [AppController, MtgController,],
   providers: [AppService,],
 })

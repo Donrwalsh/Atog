@@ -14,13 +14,31 @@ NestJS Api that consumes data from other APIs and translates it as necessary.
 
 mySql 5.7 database
 
-Database to store previously consumed data that is preferred over additional API calls.
+`>npm install --save @nestjs/typeorm typeorm` running this command manually seems important. A normal `>npm install` misses these packages for some reason.
 
-`>docker compose up database`
+SQL INT maxes out at 2,147,483,647
+bigint maxes out at 9,223,372,036,854,775,807
+
+### Reset Database
+
+`>docker compose down database -v`: removes any previously established volumes ([src](https://stackoverflow.com/questions/59657489/mysql-init-scripts-not-running-with-docker-compose))
+
+`>docker compose up database`: runs entrypoint scripts in `conf.d` directory in order. Any failures that happen with these scripts are quiet and can be troublesome.
+
+### Data 
 
 Movie Entity is very lazy right now. VARCHARs all around! probably should remove boxOffice
 
-`>npm install --save @nestjs/typeorm typeorm` running this command manually seems important. A normal `>npm install` misses these packages for some reason.
+**Blueprints**
+Currently naively implemented as a flat object structure to get the ball rolling. May end up legitimately versioning this structure if needed.
+
+https://www.w3schools.com/sql/sql_datatypes.asp
+
+Made a few data decisions:
+* Decided to skip the derived values since we can just calculate those.
+* Skipping worker and required level for now. I'm envisioning that as a separate flat table to handle the 1-3 values in a super simple way.
+* Skipping component costs for the same reason as previous.
+* Not a decision, but the crafting upgrades can reference other blueprints. Would be nice to represent that as data.
 
 ## Notes
 
