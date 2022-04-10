@@ -36,8 +36,7 @@ https://www.w3schools.com/sql/sql_datatypes.asp
 
 Made a few data decisions:
 * Decided to skip the derived values since we can just calculate those.
-* Skipping worker and required level for now. I'm envisioning that as a separate flat table to handle the 1-3 values in a super simple way.
-* Skipping component costs for the same reason as previous.
+* I applied all fields as individual one-to-one fields on the Blueprint database table. This is not realistic, and serves only to get the ball rolling on the courier integration side. A more maneuverable structure is next up on the list, and I don't think it's worth developing out the atog endpoints until this structure is nailed down. 
 * Not a decision, but the crafting upgrades can reference other blueprints. Would be nice to represent that as data.
 
 ## Notes
