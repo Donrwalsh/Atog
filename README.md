@@ -1,12 +1,8 @@
 ## Current Focus
 
-next thing is atog and bighetti need to communicate.
+Why doesn't the dockerized Atog auto-update? It seemed to be serving up stale content. Because of this, it's best to run Atog locally (containerized bighetti is all good, though I'd like to know more about how it works and how to export/backup data from it)
 
-They communicate just fine! The stuff with docker-compose is kind of a crapshoot unfortunately. I need to understand better what's going on there, because it latches onto an old image of the nestjs app and I don't know why. Also would like a better understanding of how the database persists.
-
-As it stands right now, it's best to run atog via an npm command and the database via docker-compose.
-
-I got the Atog find by ImdbId to add a new movie that isn't already in bighetti and to serve up bighetti data first if it exists.
+https://docs.nestjs.com/techniques/database#custom-connection-factory learning more about ORM
 
 ## Atog
 
@@ -27,6 +23,14 @@ Movie Entity is very lazy right now. VARCHARs all around! probably should remove
 `>npm install --save @nestjs/typeorm typeorm` running this command manually seems important. A normal `>npm install` misses these packages for some reason.
 
 ## Notes
+
+next thing is atog and bighetti need to communicate.
+
+They communicate just fine! The stuff with docker-compose is kind of a crapshoot unfortunately. I need to understand better what's going on there, because it latches onto an old image of the nestjs app and I don't know why. Also would like a better understanding of how the database persists.
+
+As it stands right now, it's best to run atog via an npm command and the database via docker-compose.
+
+I got the Atog find by ImdbId to add a new movie that isn't already in bighetti and to serve up bighetti data first if it exists.
 
 ### [First Steps](docs.nestjs.com/firststeps)
 

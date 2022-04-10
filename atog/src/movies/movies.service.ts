@@ -24,7 +24,6 @@ export class MoviesService {
         }
         var url = this.baseMovieUrl + 'i=' + imdbId;
         const result = await lastValueFrom(this.httpService.get(url));
-        console.log(result);
         await getConnection()
             .createQueryBuilder()
             .insert()
