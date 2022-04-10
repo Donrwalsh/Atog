@@ -1,4 +1,5 @@
-import { Controller, Get, Inject } from "@nestjs/common";
+import { Body, Controller, Get, Inject, Post } from "@nestjs/common";
+import { Blueprint } from "./blueprint.entity";
 import { ShopService } from "./shop.service";
 
 @Controller('shop')
@@ -8,5 +9,10 @@ export class ShopController {
     @Get()
     get() {
         return this.shopService.findAll();
+    }
+
+    @Post()
+    async create(@Body() blueprint: Blueprint) {
+        return await this.shopService.create(blueprint);
     }
 }
